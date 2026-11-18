@@ -109,6 +109,7 @@ function isFingerExtended(keypoints, f) {
          dist(wrist.x, wrist.y, joint.x, joint.y) * 1.15;
 }
 
+
 function draw() {
   drawCover(bgImg);
 
