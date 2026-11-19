@@ -20,32 +20,6 @@ for (let f of fingertips) {
 
 let smoothTips = {};
 
-// function isFingerExtended(keypoints, f) {
-//   let wrist = keypoints[0];
-//   let tip = keypoints[f.index];
-//   if (f.name === "thumb") {
-//     // 엄지: 끝(4)이 검지 뿌리(5)·새끼 뿌리(17)에서 얼마나 떨어져 있는지로 판단
-//     let indexBase = keypoints[5];
-//     let pinkyBase = keypoints[17];
-//     let palmWidth = dist(indexBase.x, indexBase.y, pinkyBase.x, pinkyBase.y);
-//     let tipToIndexBase = dist(tip.x, tip.y, indexBase.x, indexBase.y);
-//     let tipToPinkyBase = dist(tip.x, tip.y, pinkyBase.x, pinkyBase.y);
-//     return tipToIndexBase > palmWidth * 0.7 && tipToPinkyBase > palmWidth * 1.1;
-//   }
-
-//   // 나머지 손가락: 뿌리(MCP) - 중간관절(PIP) - 끝(TIP) 사이 각도로 판단
-//   let mcp = keypoints[f.mcp];
-//   let pip = keypoints[f.joint];
-//   let a = createVector(mcp.x - pip.x, mcp.y - pip.y);
-//   let b = createVector(tip.x - pip.x, tip.y - pip.y);
-//   let angle = degrees(a.angleBetween(b));
-
-//   // 쭉 펴면 180도에 가깝고, 접을수록 작아짐
-//   let tipDist = dist(wrist.x, wrist.y, tip.x, tip.y);
-//   let pipDist = dist(wrist.x, wrist.y, pip.x, pip.y);
-//   return angle > 150 && tipDist > pipDist * 1.2;
-// }
-
 
 // function preload() {
 //   img = loadImage("assets/hand.jpg");
@@ -85,6 +59,7 @@ async function setup() {
   sizeSlider.style("width", "120px");
 
   
+
   sizeSlider.input(() => {
     sizes[styleSelect.value()] = sizeSlider.value();
   });
